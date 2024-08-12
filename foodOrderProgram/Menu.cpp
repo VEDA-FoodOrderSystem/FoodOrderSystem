@@ -1,42 +1,46 @@
 #include "Menu.h"
 
-Menu::Menu(int id = 0, string name = "", double rating = 0.0, int price = 0, int ordered = 0)
+Menu::Menu(int id, string name, int star, int price, int ordered)
 {
-	// 생성자
+	menu_id = id;
+	this->name = name;
+	this->star = star;
+	this->price = price;
+	this->ordered = ordered;
 }
 int Menu::getId()
 {
-
+	return menu_id;
 }
 void Menu::setName(string& name)
 {
-
+	this->name = name;
 }
 string Menu::getName()
 {
-
+	return name;
 }
-void Menu::setRating(double rating)
+void Menu::setStar(int inputStar)
 {
-
+	this->star += inputStar;
 }
-double Menu::getRating()
+double Menu::getStar()
 {
-
+	return star;
 }
 void Menu::setPrice(int price)
 {
-
+	this->price = price;
 }
 int Menu::getPrice()
 {
-
+	return price;
 }
 void Menu::setOrdered(int ordered)
 {
-
+	this->ordered = ordered;
 }
 int Menu::getOrdered()
 {
-
+	return ordered;
 }

@@ -5,12 +5,12 @@ using namespace std;
 class Menu
 {
 public:
-	Menu(int id = 0, string name = "", double rating = 0.0, int price = 0, int ordered = 0);
+	Menu(int id = 0, string name = "", int star = 0, int price = 0, int ordered = 0);
 	int getId();
 	void setName(string& name);
 	string getName();
-	void setRating(double rating);
-	double getRating();
+	void setStar(int star);
+	double getStar();
 	void setPrice(int price);
 	int getPrice();
 	void setOrdered(int ordered);
@@ -19,8 +19,8 @@ public:
 
 private:
 	int menu_id;
-	string name; // char배열로??
-	int rating;
+	string name;
+	int star;
 	int price;
 	int ordered;
 };
