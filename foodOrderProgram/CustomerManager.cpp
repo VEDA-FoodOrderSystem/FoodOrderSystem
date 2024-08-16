@@ -1,5 +1,7 @@
 #include "CustomerManager.h"
 
+map<int, Customer*> CustomerManager::customerList;
+
 int CustomerManager::makeId()
 {
     if (customerList.size() == 0) {
@@ -10,6 +12,11 @@ int CustomerManager::makeId()
         int lastId = (--it)->first;
         return (++lastId);
     }
+}
+
+Customer* CustomerManager::search(int id)
+{
+    return customerList[id];
 }
 
 Customer* CustomerManager::inputCustomer()
