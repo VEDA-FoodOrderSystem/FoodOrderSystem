@@ -3,6 +3,8 @@
 #include <fstream>
 #include <sstream>
 
+map<int, Menu*> MenuManager::menuList;
+
 MenuManager::MenuManager()
 {
 	ifstream file;
@@ -216,7 +218,6 @@ map<int,int>  MenuManager::sortMenu(int mode)
 		for (auto it = v.begin(); it != v.end(); it++) {
 			m.insert(make_pair(distance(v.begin(), it)+1, (*it).second->getId()));
 		}
-		return m;
 		break;
 	case 2:
 		sort(v.begin(), v.end(), compRating);
@@ -224,7 +225,6 @@ map<int,int>  MenuManager::sortMenu(int mode)
 		for (auto it = v.begin(); it != v.end(); it++) {
 			m.insert(make_pair(distance(v.begin(), it) + 1, (*it).second->getId()));
 		}
-		return m;
 		break;
 	case 3:
 		sort(v.begin(), v.end(), compOrdered);
@@ -232,9 +232,9 @@ map<int,int>  MenuManager::sortMenu(int mode)
 		for (auto it = v.begin(); it != v.end(); it++) {
 			m.insert(make_pair(distance(v.begin(), it) + 1, (*it).second->getId()));
 		}
-		return m;
 		break;
 	}
+    return m;
 }
 
 bool MenuManager::isExistMenu(int id)

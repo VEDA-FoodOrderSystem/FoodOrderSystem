@@ -4,8 +4,9 @@ class CustomerManager
 {
 public:
 	int makeId();
+    Customer* search(int id);
 	Customer* inputCustomer();
 private:
-	map<int, Customer*> customerList;
+	static map<int, Customer*> customerList;
 };
 

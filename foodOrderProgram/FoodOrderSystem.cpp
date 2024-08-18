@@ -20,7 +20,7 @@ bool FoodOrderSystem::selectManagerMenu()
 	cout << "1. 메뉴관리" << endl;
 	cout << "2. 주문관리" << endl;
 	cout << "3. 뒤로가기" << endl;
-	cout << ">>";  cin >> m;
+	cout << ">> ";  cin >> m;
 	switch (m) {
 	case 1 : //메뉴 관리
 		while (1) {
@@ -49,7 +49,7 @@ bool FoodOrderSystem::selectCustomerMenu()
 	cout << "2. 리뷰작성" << endl;
 	cout << "3. 리뷰보기" << endl;
 	cout << "4. 뒤로가기" << endl;
-	cout << ">>";  cin >> m;
+	cout << ">> ";  cin >> m;
 	map<int, int> m1;
 	switch (m) {
 	case 1: //주문하기
@@ -57,25 +57,20 @@ bool FoodOrderSystem::selectCustomerMenu()
 		cout << endl;
 		cout << "메뉴 정렬 기준을 선택하세요." << endl;
 		cout << "(1) 가격  (2) 별점  (3) 주문횟수" << endl;
-		cout << ">>"; cin >> mode;
+		cout << ">> "; cin >> mode;
 		m1 = mm.sortMenu(mode);
 		om.inputOrder(mm.sortMenu(mode)); //vector<int,int> idx,menu_id 의 pair
 		break;
 	case 2: //리뷰작성
 		int orderId;
 		cout << "리뷰를 작성할 주문번호를 입력해주세요." << endl;
-		cout << ">>";  cin >> orderId;
+		cout << ">> ";  cin >> orderId;
 		cout << "주문번호 "<<orderId<<"번에 대한 내역입니다."<<endl;
-		cout << "------------------------------" << endl;
-		om.displayOrder(orderId - 1);
-		cout << "------------------------------" << endl;
-		rm.inputReview(orderId - 1);
+		om.displayOrder(orderId, true);
+		rm.inputReview(orderId);
 		break;
 	case 3: //리뷰확인
-		cout << "작성된 리뷰입니다." << endl;
-		cout << "------------------------------" << endl;
 		rm.displayReview();
-		cout << "------------------------------" << endl;
 		break;
 	case 4: default:
 		return false;
@@ -95,7 +90,7 @@ void FoodOrderSystem::run()
 		cout << "1. 고객" << endl;
 		cout << "2. 관리자" << endl;
 		cout << "3. 종료" << endl;
-		cout << ">>";  cin >> mode;
+		cout << ">> ";  cin >> mode;
 
 
 		if (mode == 3) break;
