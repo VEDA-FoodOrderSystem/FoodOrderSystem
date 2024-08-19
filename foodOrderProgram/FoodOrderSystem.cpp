@@ -10,7 +10,7 @@ FoodOrderSystem::FoodOrderSystem()
 }
 FoodOrderSystem::~FoodOrderSystem()
 {
-
+	
 }
 bool FoodOrderSystem::selectManagerMenu()
 {
@@ -57,8 +57,7 @@ bool FoodOrderSystem::selectCustomerMenu()
 		cout << endl;
 		cout << "메뉴 정렬 기준을 선택하세요." << endl;
 		cout << "(1) 가격  (2) 별점  (3) 주문횟수" << endl;
-		cout << ">> "; cin >> mode;
-		m1 = mm.sortMenu(mode);
+		cout << ">>"; cin >> mode;
 		om.inputOrder(mm.sortMenu(mode)); //vector<int,int> idx,menu_id 의 pair
 		break;
 	case 2: //리뷰작성
