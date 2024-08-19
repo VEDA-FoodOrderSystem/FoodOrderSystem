@@ -5,7 +5,6 @@
 
 map<int, Menu*> MenuManager::menuList;
 
-
 MenuManager::MenuManager()
 {
 	ifstream file;
