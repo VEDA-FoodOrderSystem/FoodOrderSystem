@@ -1,5 +1,6 @@
 #include "CustomerManager.h"
 
+
 map<int, Customer*> CustomerManager::customerList;
 
 int CustomerManager::makeId()
