@@ -1,19 +1,25 @@
 #include "Order.h"
-class OrderManager
-{
+#include <map>
+
+class MenuManager;
+class CustomerManager;
+
+class OrderManager {
 public:
     OrderManager();
     ~OrderManager();
 
-    void inputOrder();
+    vector<string> parseCSV(istream& file, char delimiter);
+
+    void inputOrder(map<int, int> idx);
     void deleteOrder(int id);
-    void editOrder(int id);
+    bool editOrder(int id);
     Order* search(int id);
     int makeId();
-    void displayOrder();
-    void displayOrder(int id);
+    bool displayOrder();
+    void displayOrder(int id, bool isCustomer);
     bool selectMenu();
 private:
-    map<int, Order*> orderList;
+    static map<int, Order*> orderList;
 };
 

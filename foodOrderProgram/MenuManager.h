@@ -1,4 +1,3 @@
-
 #include "Menu.h"
 #include <map>
 #include <vector>
@@ -22,7 +21,7 @@ public:
     bool selectMenu();
 
 private:
-    map<int, Menu*> menuList;
+    static map<int, Menu*> menuList;
     bool isExistMenu(int id);
     static bool compPrice(pair<int, Menu*>& a, pair<int, Menu*>& b);
     static bool compRating(pair<int, Menu*>& a, pair<int, Menu*>& b);

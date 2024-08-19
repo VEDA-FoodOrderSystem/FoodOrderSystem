@@ -3,10 +3,14 @@
 #include <fstream>
 #include <sstream>
 
+map<int, Menu*> MenuManager::menuList;
+
+
 MenuManager::MenuManager()
 {
 	ifstream file;
-	file.open("menulist.csv");
+	file.open("menulist.txt");
+
 	if (!file.fail()) {
 		while (!file.eof()) {
 			vector<string> row = parseCSV(file, ',');
@@ -26,7 +30,8 @@ MenuManager::MenuManager()
 MenuManager::~MenuManager()
 {
 	ofstream file;
-	file.open("menulist.csv");
+	file.open("menulist.txt");
+
 	if (!file.fail()) {
 		for (const auto& v : menuList) {
 			Menu* m = v.second;
@@ -37,6 +42,7 @@ MenuManager::~MenuManager()
 	}
 	file.close();
 }
+
 
 vector<string> MenuManager::parseCSV(istream& file, char delimiter)
 {
@@ -70,6 +76,7 @@ void MenuManager::inputMenu()
 	cout << "등록할 메뉴의 정보를 입력해주세요." << endl;
 	cout << "이름>> "; cin >> menuName;
 	cout << "가격>> "; cin >> menuPrice;
+
 
 	int id = makeId();
 	Menu* m = new Menu(id, menuName, 0, menuPrice, 0);
@@ -182,6 +189,7 @@ void MenuManager::displayMenu(int id)
 
 
 bool MenuManager::compPrice(pair<int, Menu*>& a, pair<int, Menu*>& b)
+
 {
 	return a.second->getPrice() > b.second->getPrice();
 }
@@ -200,6 +208,7 @@ bool MenuManager::compRating(pair<int, Menu*>& a, pair<int, Menu*>& b)
 	return ratingA > ratingB;
 }
 
+
 bool MenuManager::compOrdered(pair<int, Menu*>& a, pair<int, Menu*>& b)
 {
 	return a.second->getOrdered() > b.second->getOrdered();
@@ -216,7 +225,6 @@ map<int,int>  MenuManager::sortMenu(int mode)
 		for (auto it = v.begin(); it != v.end(); it++) {
 			m.insert(make_pair(distance(v.begin(), it)+1, (*it).second->getId()));
 		}
-		return m;
 		break;
 	case 2:
 		sort(v.begin(), v.end(), compRating);
@@ -224,7 +232,6 @@ map<int,int>  MenuManager::sortMenu(int mode)
 		for (auto it = v.begin(); it != v.end(); it++) {
 			m.insert(make_pair(distance(v.begin(), it) + 1, (*it).second->getId()));
 		}
-		return m;
 		break;
 	case 3:
 		sort(v.begin(), v.end(), compOrdered);
@@ -232,9 +239,9 @@ map<int,int>  MenuManager::sortMenu(int mode)
 		for (auto it = v.begin(); it != v.end(); it++) {
 			m.insert(make_pair(distance(v.begin(), it) + 1, (*it).second->getId()));
 		}
-		return m;
 		break;
 	}
+    return m;
 }
 
 bool MenuManager::isExistMenu(int id)
@@ -267,10 +274,7 @@ bool MenuManager::selectMenu()
 		cout << ">>"; cin >> id;
 		while (!isExistMenu(id - 1)) {
 			cout << "없는 메뉴입니다. 다시 입력하세요." << endl;
-			cout << "-1을 입력하면 종료합니다." << endl;
 			cout << ">>"; cin >> id;
-
-			if (id == -1) return false;
 		}
 		editMenu(id-1);
 		break;
@@ -281,9 +285,8 @@ bool MenuManager::selectMenu()
 		cout << ">>"; cin >> id;
 		while (!isExistMenu(id - 1)) {
 			cout << "없는 메뉴입니다. 다시 입력하세요." << endl;
-			cout << "-1을 입력하면 종료합니다." << endl;
 			cout << ">>";  cin >> id;
-			if (id == -1) return false;
+
 		}
 		deleteMenu(id - 1);
 		break;

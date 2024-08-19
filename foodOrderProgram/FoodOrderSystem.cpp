@@ -94,7 +94,7 @@ void FoodOrderSystem::run()
 		cout << "1. 고객" << endl;
 		cout << "2. 관리자" << endl;
 		cout << "3. 종료" << endl;
-		cout << ">>";  cin >> mode;
+		cout << ">> ";  cin >> mode;
 
 
 		if (mode == 3) break;
