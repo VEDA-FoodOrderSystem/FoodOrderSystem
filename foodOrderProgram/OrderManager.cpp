@@ -89,6 +89,7 @@ void OrderManager::inputOrder(map<int, int> idx) {
     vector<pair<int, int>> order;
     while (true) {
         int num, cnt;
+        bool isContinue;
         cout << ">> 메뉴: "; cin >> num;
 
         if (!num)
@@ -98,9 +99,33 @@ void OrderManager::inputOrder(map<int, int> idx) {
 
         mm.search(idx[num])->setOrdered(cnt);
         order.push_back({idx[num], cnt});
+
+        while (1) {
+            try {
+                int input;
+                cout << "계속 주문하시겠습니까? (1)예 (2)아니오\n>> ";
+                cin >> input;
+
+                // 입력이 실패하면 예외를 발생시킴
+                if (cin.fail())
+                    throw runtime_error("형식에 맞지 않는 입력입니다.");
+
+                if (input == 1) {
+                    isContinue = true;
+                    break;
+                } else if (input == 2) {
+                    isContinue = false;
+                    break;
+                } else throw runtime_error("범위에 어긋나는 입력입니다.");
+            } catch (const runtime_error& e) {
+                cout << "다시 입력해 주세요.\n";
+            }
+        }
+        if (!isContinue)
+            break;
     }
 
-    // 주문자 정보 입력받기x
+    // 주문자 정보 입력받기
     Customer *customer = cm.inputCustomer();
 
 	//order_Id 생성
@@ -134,20 +159,35 @@ void OrderManager::deleteOrder(int id) {
 }
 
 bool OrderManager::editOrder(int id) {
-    cout << "수정할 타입을 선택해 주세요.\n";
-
     int n;
-    cout << "(1)조리 시작 (2)조리 완료 (3)삭제\n>> "; cin >> n;
+    while (1) {
+        try {
+            int input;
+            cout << "수정할 타입을 선택해 주세요.\n";
+            cout << "(1)조리 시작 (2)조리 완료 (3)삭제 (4)뒤로가기\n>> ";
+            cin >> input;
 
-    if (n == 3) {
-        deleteOrder(id);
-        return false;
+            // 입력이 실패하면 예외를 발생시킴
+            if (cin.fail())
+                throw runtime_error("형식에 맞지 않는 입력입니다.");
+
+            if (input == 1 || input == 2 || input == 3 || input == 4) {
+                n = input;
+                break;
+            } else throw runtime_error("범위에 어긋나는 입력입니다.");
+        } catch (const runtime_error& e) {
+            cout << "다시 입력해 주세요.\n";
+        }
     }
-    else {
+
+    if (n == 1 || n == 2) {
         //해당 id의 order의 주문상태를 변경
         orderList[id]->setState(n);
         //displayOrder(id)
         displayOrder(id, false);
+    } else if (n == 3) {
+        deleteOrder(id);
+        return false;
     }
     return true;
 }
@@ -238,7 +278,25 @@ bool OrderManager::selectMenu() {
         return false;
 
     int id;
-    cout << "수정할 주문 번호를 입력하세요. (종료는 0을 입력하세요)\n>> "; cin >> id;
+    while (1) {
+        try {
+            int input;
+            cout << "수정할 주문 번호를 입력하세요. (종료는 0을 입력하세요)\n>> ";
+            cin >> input;
+
+            Order *order = search(id);
+
+            // 입력이 실패하면 예외를 발생시킴
+            if (input && order == nullptr)
+                throw runtime_error("범위에 어긋나는 입력입니다.");
+            else {
+                id = input;
+                break;
+            }
+        } catch (const runtime_error& e) {
+            cout << "다시 입력해 주세요.\n";
+        }
+    }
 
     if (!id)
         return false;
