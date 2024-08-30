@@ -66,21 +66,26 @@ vector<string> MenuManager::parseCSV(istream& file, char delimiter)
 
 void MenuManager::inputMenu()
 {
-	string menuName;
-	int menuPrice;
-	cout << endl;
-	cout << "등록할 메뉴의 정보를 입력해주세요." << endl;
-	cout << "이름>> "; cin >> menuName;
-	cout << "가격>> "; cin >> menuPrice;
+    string menuName;
+    int menuPrice;
+    cout << endl;
+    cout << "등록할 메뉴의 정보를 입력해주세요." << endl;
+    cout << "이름>> "; cin >> menuName;
+    cout << "가격>> "; cin >> menuPrice;
 
-	int id = makeId();
-	Menu* m = new Menu(id, menuName, 0, menuPrice, 0);
-	menuList.insert(make_pair(id, m));
+    saveMenu(menuName, menuPrice);
+}
 
-	cout << "------------------------------" << endl;
-	cout << "*신메뉴 " << menuName << "이 등록되었습니다." << endl;
-	displayMenu(id);
-	cout << "------------------------------" << endl;
+void MenuManager::saveMenu(string menuName, int menuPrice)
+{
+    int id = makeId();
+    Menu* m = new Menu(id, menuName, 0, menuPrice, 0);
+    menuList.insert(make_pair(id, m));
+
+    cout << "------------------------------" << endl;
+    cout << "*신메뉴 " << menuName << "이 등록되었습니다." << endl;
+    displayMenu(id);
+    cout << "------------------------------" << endl;
 }
 
 void MenuManager::deleteMenu(int id)

@@ -27,6 +27,11 @@ Customer* CustomerManager::inputCustomer()
     cout << "이름>> "; cin >> name;
     cout << "전화번호>> "; cin >> phone;
 
+    return saveCustomer(name, phone);
+}
+
+Customer* CustomerManager::saveCustomer(string name, string phone)
+{
     int id = makeId();
     Customer* c = new Customer(id, name, phone);
     customerList.insert(make_pair(id, c));

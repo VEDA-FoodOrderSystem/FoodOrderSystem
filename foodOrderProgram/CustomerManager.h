@@ -3,9 +3,10 @@
 class CustomerManager
 {
 public:
-	int makeId();
-    Customer* search(int id);
-	Customer* inputCustomer();
+	virtual int makeId();
+    virtual Customer* search(int id);
+    virtual Customer* inputCustomer();
+    virtual Customer* saveCustomer(string name, string phone);
 private:
 	static map<int, Customer*> customerList;
 };

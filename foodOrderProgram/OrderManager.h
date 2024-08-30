@@ -11,14 +11,15 @@ public:
 
     vector<string> parseCSV(istream& file, char delimiter);
 
-    void inputOrder(map<int, int> idx);
-    void deleteOrder(int id);
-    bool editOrder(int id);
-    Order* search(int id);
-    int makeId();
-    bool displayOrder();
-    void displayOrder(int id, bool isCustomer);
-    bool selectMenu();
+    virtual void inputOrder(map<int, int> idx);
+    virtual void saveOrder(string time, int customer_id, const vector<pair<int, int>>& order);
+    virtual void deleteOrder(int id);
+    virtual bool editOrder(int id);
+    virtual Order* search(int id);
+    virtual int makeId();
+    virtual bool displayOrder();
+    virtual void displayOrder(int id, bool isCustomer);
+    virtual bool selectMenu();
 private:
     static map<int, Order*> orderList;
 };

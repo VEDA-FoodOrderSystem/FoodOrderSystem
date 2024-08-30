@@ -5,13 +5,13 @@ class Review
 {
 public:
 	Review(int review_id = 0, int star = 0, string content = "", int order_id = 0);
-	int getId();
-	void setStar(int star);
-	double getStar();
-	void setContent(string& content);
-    string getContent();
-	void setOrderId(int id);
-	int getOrderId();
+    virtual int getId();
+    virtual void setStar(int star);
+    virtual double getStar();
+    virtual void setContent(string& content);
+    virtual string getContent();
+    virtual void setOrderId(int id);
+    virtual int getOrderId();
 
 private:
 	int review_id;

@@ -9,16 +9,18 @@ public:
     ~MenuManager();
 
     vector<string> parseCSV(istream& file, char delimiter);
-    void inputMenu();
-    void deleteMenu(int id);
-    void editMenu(int id);
-    Menu* search(int id);
-    int makeId();
-    void displayMenu();
-    void displayMenu(vector <pair<int, Menu*>> v);
-    void displayMenu(int id);
-    map<int, int>  sortMenu(int mode);
-    bool selectMenu();
+
+    virtual void inputMenu();
+    virtual void saveMenu(string menuName, int menuPrice);
+    virtual void deleteMenu(int id);
+    virtual void editMenu(int id);
+    virtual Menu* search(int id);
+    virtual int makeId();
+    virtual void displayMenu();
+    virtual void displayMenu(vector <pair<int, Menu*>> v);
+    virtual void displayMenu(int id);
+    virtual map<int, int>  sortMenu(int mode);
+    virtual bool selectMenu();
 
 private:
     static map<int, Menu*> menuList;
