@@ -9,6 +9,7 @@ MenuManager::MenuManager()
 {
 	ifstream file;
 	file.open("menulist.txt");
+
 	if (!file.fail()) {
 		while (!file.eof()) {
 			vector<string> row = parseCSV(file, ',');
@@ -29,6 +30,7 @@ MenuManager::~MenuManager()
 {
 	ofstream file;
 	file.open("menulist.txt");
+
 	if (!file.fail()) {
 		for (const auto& v : menuList) {
 			Menu* m = v.second;
@@ -39,6 +41,7 @@ MenuManager::~MenuManager()
 	}
 	file.close();
 }
+
 
 vector<string> MenuManager::parseCSV(istream& file, char delimiter)
 {
@@ -189,6 +192,7 @@ void MenuManager::displayMenu(int id)
 
 
 bool MenuManager::compPrice(pair<int, Menu*>& a, pair<int, Menu*>& b)
+
 {
 	return a.second->getPrice() > b.second->getPrice();
 }
@@ -206,6 +210,7 @@ bool MenuManager::compRating(pair<int, Menu*>& a, pair<int, Menu*>& b)
 	}
 	return ratingA > ratingB;
 }
+
 
 bool MenuManager::compOrdered(pair<int, Menu*>& a, pair<int, Menu*>& b)
 {
@@ -284,6 +289,7 @@ bool MenuManager::selectMenu()
 		while (!isExistMenu(id - 1)) {
 			cout << "없는 메뉴입니다. 다시 입력하세요." << endl;
 			cout << ">>";  cin >> id;
+
 		}
 		deleteMenu(id - 1);
 		break;
