@@ -4,7 +4,7 @@
 using namespace std;
 class Order {
 public:
-	Order(int order_id = 0, string time = 0, int customer_id = 0, int state = 0, vector<pair<int, int>> orderMenuList = {});
+	Order(int order_id = 0, string time = "", int customer_id = 0, int state = 0, vector<pair<int, int>> orderMenuList = {});
 	int getId() const;
 	void setTime(string& time);
 	string getTime();

@@ -76,20 +76,24 @@ vector<string> ReviewManager::parseCSV(istream& file, char delimiter)
 
 void ReviewManager::inputReview(int order_id) {
 
-    MenuManager mm = MenuManager();
-    OrderManager om = OrderManager();
-
 	//별점, comment 입력 받기
     int star;
-    string contentInput = "";
     string content;
     cout << "평점을 입력해 주세요. (0, 1, 2, 3, 4, 5)\n>> ";
     cin >> star;
+    cin.ignore();
     cout << "리뷰를 입력해 주세요.\n>> ";
-    getline(cin, contentInput);
-    content = contentInput;
+    getline(cin, content);
 
-	//order_id에 해당하는 menu의 star update
+	saveReview(star, content, order_id);
+}
+
+void ReviewManager::saveReview(int star, string content, int order_id) {
+
+    MenuManager mm = MenuManager();
+    OrderManager om = OrderManager();
+
+    //order_id에 해당하는 menu의 star update
     Order* order = om.search(order_id);
     vector<pair<int, int>> orderMenuList = order->getOrderMenuList();
     for (auto oml: orderMenuList) {
@@ -97,16 +101,18 @@ void ReviewManager::inputReview(int order_id) {
         menu->setStar(star);
     }
 
-	//review_id 생성
+    //review_id 생성
     int id = makeId();
 
-	//review 생성 후 reviewList에 추가
+    //review 생성 후 reviewList에 추가
     Review* review = new Review(id, star, content, order_id);
     reviewList.insert({id, review});
 
-	//displayReview(review_id)
+    //displayReview(review_id)
     displayReview(id);
 }
+
+
 Review* ReviewManager::search(int id)
 {
 	//해당 review_id를 가진 review 반환
@@ -171,7 +177,6 @@ void ReviewManager::displayReview(int id) {
     cout << "  시간  : " << order->getTime() << "\n";
     cout << " 주문자  : " << customer->getName() << "\n";
     cout << "  평점  : " << review->getStar() << "\n";
-
     cout << "  리뷰  : " << review->getContent() << '\n';
     cout << "------------------------------\n";
 }

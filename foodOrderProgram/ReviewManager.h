@@ -9,12 +9,13 @@ public:
 
     vector<string> parseCSV(istream& file, char delimiter);
 
-    void inputReview(int order_id);
-    Review* search(int id);
-    map<int, Review*> getReviewList();
-    int makeId();
-    void displayReview();
-    void displayReview(int id);
+    virtual void inputReview(int order_id);
+    virtual void saveReview(int star, string content, int order_id);
+    virtual Review* search(int id);
+    virtual map<int, Review*> getReviewList();
+    virtual int makeId();
+    virtual void displayReview();
+    virtual void displayReview(int id);
 
 private:
     static map<int, Review*> reviewList;

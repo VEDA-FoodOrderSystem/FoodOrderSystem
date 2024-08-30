@@ -1,0 +1,6 @@
+[submodule "foodOrderProgram/googletest"]
+	path = foodOrderProgram/googletest
+	url = https://github.com/google/googletest.git
+[submodule "foodOrderProgram/test/googletest"]
+	path = foodOrderProgram/test/googletest
+	url = https://github.com/google/googletest.git

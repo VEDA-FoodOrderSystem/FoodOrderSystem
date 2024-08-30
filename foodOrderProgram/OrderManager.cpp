@@ -128,24 +128,31 @@ void OrderManager::inputOrder(map<int, int> idx) {
     // 주문자 정보 입력받기
     Customer *customer = cm.inputCustomer();
 
-	//order_Id 생성
-    int id = makeId() + 1;
-
 	//time 생성
     time_t timer = std::time(NULL);
     struct tm* t = localtime(&timer);
     string time = to_string(t->tm_year + 1900) + '.' + to_string(t->tm_mon + 1) + '.' + to_string(t->tm_mday)
             + ' ' + to_string(t->tm_hour) + ':' + to_string(t->tm_min);
 
-	//Order 생성해서 orderList에 추가
-    Order *newOrder = new Order(id, time, customer->getId(), 0, order);
+    saveOrder(time, customer->getId(), order);
+}
+
+void OrderManager::saveOrder(string time, int customer_id, const vector<pair<int, int>>& order) {
+
+    MenuManager mm = MenuManager();
+
+    //order_Id 생성
+    int id = makeId() + 1;
+
+    //Order 생성해서 orderList에 추가
+    Order *newOrder = new Order(id, time, customer_id, 0, order);
     orderList.insert({id, newOrder});
 
     for (auto o: order) {
         Menu* menu = mm.search(o.first);
         menu->setOrdered(o.second);
     }
-	//displayOrder(id)
+    //displayOrder(id)
     displayOrder(id, true);
 }
 

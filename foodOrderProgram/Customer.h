@@ -5,11 +5,11 @@ class Customer
 {
 public:
 	Customer(int id = 0, string name = "", string phone = "");
-	int getId();
-	void setName(string& name);
-	string getName();
-	void setPhone(string& phone);
-	string getPhone();
+	virtual int getId();
+    virtual void setName(string& name);
+    virtual string getName();
+    virtual void setPhone(string& phone);
+    virtual string getPhone();
 private:
 	int customer_id;
 	string name;

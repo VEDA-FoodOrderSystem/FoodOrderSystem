@@ -6,15 +6,15 @@ class Menu
 {
 public:
 	Menu(int id = 0, string name = "", int star = 0, int price = 0, int ordered = 0);
-	int getId();
-	void setName(string& name);
-	string getName();
-	void setStar(int star);
-	double getStar();
-	void setPrice(int price);
-	int getPrice();
-	void setOrdered(int ordered);
-	int getOrdered();
+    virtual int getId();
+    virtual void setName(string& name);
+    virtual string getName();
+    virtual void setStar(int star);
+    virtual double getStar();
+    virtual void setPrice(int price);
+    virtual int getPrice();
+    virtual void setOrdered(int ordered);
+    virtual int getOrdered();
 
 
 private:
