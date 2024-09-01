@@ -8,7 +8,7 @@ map<int, Menu*> MenuManager::menuList;
 MenuManager::MenuManager()
 {
 	ifstream file;
-	file.open("menulist.txt");
+	file.open("menulist.csv");
 
 	if (!file.fail()) {
 		while (!file.eof()) {
@@ -18,7 +18,8 @@ MenuManager::MenuManager()
 				int star = atoi(row[2].c_str());
 				int price = atoi(row[3].c_str());
 				int ordered = atoi(row[4].c_str());
-				Menu* m = new Menu(id, row[1], star, price, ordered);
+				int reviewed = atoi(row[5].c_str());
+				Menu* m = new Menu(id, row[1], star, price, ordered, reviewed);
 				menuList.insert({ id, m });
 			}
 		}
@@ -29,14 +30,14 @@ MenuManager::MenuManager()
 MenuManager::~MenuManager()
 {
 	ofstream file;
-	file.open("menulist.txt");
+	file.open("menulist.csv");
 
 	if (!file.fail()) {
 		for (const auto& v : menuList) {
 			Menu* m = v.second;
 			file << m->getId()<< ", " << m->getName() << ", ";
 			file << m->getStar() << ", " << m->getPrice() << ",";
-			file << m->getOrdered() << endl;
+			file << m->getOrdered() << ", " << m->getReviewed() << endl;
 		}
 	}
 	file.close();
@@ -71,10 +72,15 @@ void MenuManager::inputMenu()
 {
     string menuName;
     int menuPrice;
+
     cout << endl;
+	cin.ignore();
     cout << "등록할 메뉴의 정보를 입력해주세요." << endl;
-    cout << "이름>> "; cin >> menuName;
-    cout << "가격>> "; cin >> menuPrice;
+	cout << ">> 이름: ";
+	getline(cin, menuName);
+    cout << ">> 가격: "; 
+	cin >> menuPrice;
+	cin.ignore();
 
     saveMenu(menuName, menuPrice);
 }
@@ -82,20 +88,22 @@ void MenuManager::inputMenu()
 void MenuManager::saveMenu(string menuName, int menuPrice)
 {
     int id = makeId();
-    Menu* m = new Menu(id, menuName, 0, menuPrice, 0);
+    Menu* m = new Menu(id, menuName, 0, menuPrice, 0, 0);
     menuList.insert(make_pair(id, m));
 
+	cout << endl;
     cout << "------------------------------" << endl;
-    cout << "*신메뉴 " << menuName << "이 등록되었습니다." << endl;
+    cout << "* 신메뉴가 등록되었습니다." << endl;
     displayMenu(id);
     cout << "------------------------------" << endl;
 }
-
 void MenuManager::deleteMenu(int id)
 {
 	Menu* m = search(id);
+
+	cout << endl;
 	cout << "------------------------------" << endl;
-	cout << "*삭제된 메뉴는 다음과 같습니다." << endl;
+	cout << "* 삭제된 메뉴는 다음과 같습니다." << endl;
 	displayMenu(id);
 	cout << "------------------------------" << endl;
 
@@ -106,18 +114,22 @@ void MenuManager::editMenu(int id)
 {
 	string editName;
 	int editPrice;
+
 	cout << endl;
+	cin.ignore();
 	cout << "수정할 내용을 입력해주세요." << endl;
-	cout << "이름>> "; cin >> editName;
-	cout << "가격>> "; cin >> editPrice;
+	cout << ">> 이름: "; 
+	getline(cin, editName);
+	cout << ">> 가격: "; cin >> editPrice;
 	
 	Menu* m = search(id);
 	m->setName(editName);
 	m->setPrice(editPrice);
 	menuList[id] = m;
 
+	cout << endl;
 	cout << "------------------------------" << endl;
-	cout << "*수정된 메뉴는 다음과 같습니다." << endl;
+	cout << "* 수정된 메뉴는 다음과 같습니다." << endl;
 	displayMenu(id);
 	cout << "------------------------------" << endl;
 }
@@ -144,21 +156,24 @@ void MenuManager::displayMenu(vector < pair<int, Menu*>> v)
 	cout << endl;
 	cout << "현재 등록된 메뉴 리스트입니다." << endl;
 	cout << "------------------------------" << endl;
+
 	for (auto it = v.begin(); it != v.end(); it++) {
 		Menu* m = (*it).second;
 		double rating;
-		if (m->getOrdered() == 0) {
+		if (m->getOrdered() == 0 || m->getReviewed() == 0) {
 			rating = -1.0;
 		}
 		else {
-			rating = m->getStar() / m->getOrdered();
+			rating = m->getStar() / m->getReviewed();
 		}
 
+		cout << endl;
 		cout << "(" << distance(v.begin(), it)+1 << ")" << endl;
 		cout << "메뉴 : " << m->getName() << endl;
 		cout << "가격 : " << m->getPrice() << endl;
+
 		if (rating == -1.0) {
-			cout << "신메뉴 입니다." << endl;
+			cout << "[ 신메뉴 ]" << endl;
 		}
 		else {
 			cout << fixed;
@@ -174,9 +189,11 @@ void MenuManager::displayMenu()
 	cout << endl;
 	cout << "현재 등록된 메뉴 리스트입니다." << endl;
 	cout << "------------------------------" << endl;
+
 	for (const auto& v : menuList) {
 		Menu* m = v.second;
 
+		cout << endl;
 		cout << "(" << m->getId() + 1 << ")" << endl;
 		cout << "메뉴 : " << m->getName() << endl;
 		cout << "가격 : " << m->getPrice() << endl;
@@ -186,6 +203,8 @@ void MenuManager::displayMenu()
 void MenuManager::displayMenu(int id)
 {
 	Menu* m = search(id);
+
+	cout << endl;
 	cout << "이름 : " << m->getName() << endl;
 	cout << "가격 : " << m->getPrice() << endl;
 }
@@ -200,13 +219,13 @@ bool MenuManager::compPrice(pair<int, Menu*>& a, pair<int, Menu*>& b)
 bool MenuManager::compRating(pair<int, Menu*>& a, pair<int, Menu*>& b)
 {
 	double ratingA, ratingB;
-	if (a.second->getOrdered() == 0) ratingA = -1.0;
+	if (a.second->getReviewed() == 0) ratingA = -1.0;
 	else {
-		ratingA = a.second->getStar() / a.second->getOrdered();
+		ratingA = a.second->getStar() / a.second->getReviewed();
 	}
-	if (b.second->getOrdered() == 0) ratingB = -1.0;
+	if (b.second->getReviewed() == 0) ratingB = -1.0;
 	else {
-		ratingB = b.second->getStar() / b.second->getOrdered();
+		ratingB = b.second->getStar() / b.second->getReviewed();
 	}
 	return ratingA > ratingB;
 }
@@ -271,22 +290,40 @@ bool MenuManager::selectMenu()
 		inputMenu();
 		break;
 	case 2:
+		if (menuList.empty()) {
+			cout << endl;
+			cout << "[Error]" << endl;
+			cout << "수정 가능한 메뉴가 없습니다." << endl;
+			return false;
+		}
 		displayMenu();
 		cout << endl;
 		cout << "수정할 메뉴의 번호를 입력하세요." << endl;
 		cout << ">>"; cin >> id;
+
 		while (!isExistMenu(id - 1)) {
+			cout << endl;
+			cout << "[Error]" << endl;
 			cout << "없는 메뉴입니다. 다시 입력하세요." << endl;
 			cout << ">>"; cin >> id;
 		}
 		editMenu(id-1);
 		break;
 	case 3:
+		if (menuList.empty()) {
+			cout << endl;
+			cout << "[Error]" << endl;
+			cout << "삭제 가능한 메뉴가 없습니다." << endl;
+			return false;
+		}
 		displayMenu();
 		cout << endl;
 		cout << "삭제할 메뉴의 번호를 입력하세요." << endl;
 		cout << ">>"; cin >> id;
+
 		while (!isExistMenu(id - 1)) {
+			cout << endl;
+			cout << "[Error]" << endl;
 			cout << "없는 메뉴입니다. 다시 입력하세요." << endl;
 			cout << ">>";  cin >> id;
 
