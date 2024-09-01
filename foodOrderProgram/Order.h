@@ -5,15 +5,15 @@ using namespace std;
 class Order {
 public:
 	Order(int order_id = 0, string time = "", int customer_id = 0, int state = 0, vector<pair<int, int>> orderMenuList = {});
-	int getId() const;
-	void setTime(string& time);
-	string getTime();
-	void setCustomerId(int id);
-	int getCustomerId() const;
-	void setState(int state);
-	int getState();
-	void setOrderMenuList(vector<pair<int, int>> orderMenu);
-    vector<pair<int, int>> getOrderMenuList();
+	virtual int getId() const;
+    virtual void setTime(string& time);
+    virtual string getTime();
+    virtual void setCustomerId(int id);
+    virtual int getCustomerId() const;
+    virtual void setState(int state);
+    virtual int getState();
+    virtual void setOrderMenuList(vector<pair<int, int>> orderMenu);
+    virtual vector<pair<int, int>> getOrderMenuList();
 
 private:
 	int order_id;

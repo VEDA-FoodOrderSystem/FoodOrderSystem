@@ -39,6 +39,8 @@ OrderManager::~OrderManager() {
     if (!file.fail()) {
         for (const auto& v : orderList) {
             Order* o = v.second;
+            if (o == NULL)
+                continue;
             file << o->getId()<< ", " << o->getTime() << ", ";
             file << o->getCustomerId() << ", " << o->getState() << ",";
 
@@ -58,22 +60,33 @@ vector<string> OrderManager::parseCSV(istream& file, char delimiter)
     stringstream ss;
     vector<string> row;
     string t = " \n\r\t";
+    char c;
 
-    while (!file.eof()) {
-        char c = file.get();
+    while (file.get(c)) {
         if (c == delimiter || c == '\r' || c == '\n') {
-            if (file.peek() == '\n') file.get();
             string s = ss.str();
             s.erase(0, s.find_first_not_of(t));
             s.erase(s.find_last_not_of(t) + 1);
             row.push_back(s);
             ss.str("");
-            if (c != delimiter) break;
-        }
-        else {
+            ss.clear(); // 스트링스트림 초기화
+
+            // 만약 줄바꿈 문자를 만나면 종료
+            if (c == '\r' && file.peek() == '\n') file.get(); // Windows 개행 처리 (\r\n)
+            if (c == '\n') break;
+        } else {
             ss << c;
         }
     }
+
+    // 마지막 값 처리
+    if (!ss.str().empty()) {
+        string s = ss.str();
+        s.erase(0, s.find_first_not_of(t));
+        s.erase(s.find_last_not_of(t) + 1);
+        row.push_back(s);
+    }
+
     return row;
 }
 
@@ -134,26 +147,29 @@ void OrderManager::inputOrder(map<int, int> idx) {
     string time = to_string(t->tm_year + 1900) + '.' + to_string(t->tm_mon + 1) + '.' + to_string(t->tm_mday)
             + ' ' + to_string(t->tm_hour) + ':' + to_string(t->tm_min);
 
-    saveOrder(time, customer->getId(), order);
+    for (auto o: order) {
+        Menu* menu = mm.search(o.first);
+        menu->setOrdered(o.second);
+    }
+
+    int id = saveOrder(time, customer->getId(), order);
+
+    //displayOrder(id)
+    displayOrder(id, true);
 }
 
-void OrderManager::saveOrder(string time, int customer_id, const vector<pair<int, int>>& order) {
+int OrderManager::saveOrder(string time, int customer_id, const vector<pair<int, int>>& order) {
 
     MenuManager mm = MenuManager();
 
     //order_Id 생성
-    int id = makeId() + 1;
+    int id = makeId();
 
     //Order 생성해서 orderList에 추가
     Order *newOrder = new Order(id, time, customer_id, 0, order);
     orderList.insert({id, newOrder});
 
-    for (auto o: order) {
-        Menu* menu = mm.search(o.first);
-        menu->setOrdered(o.second);
-    }
-    //displayOrder(id)
-    displayOrder(id, true);
+    return id;
 }
 
 void OrderManager::deleteOrder(int id) {
@@ -167,24 +183,21 @@ void OrderManager::deleteOrder(int id) {
 
 bool OrderManager::editOrder(int id) {
     int n;
-    while (1) {
-        try {
-            int input;
-            cout << "수정할 타입을 선택해 주세요.\n";
-            cout << "(1)조리 시작 (2)조리 완료 (3)삭제 (4)뒤로가기\n>> ";
-            cin >> input;
+    try {
+        int input;
+        cout << "수정할 타입을 선택해 주세요.\n";
+        cout << "(1)조리 시작 (2)조리 완료 (3)삭제 (4)뒤로가기\n>> ";
+        cin >> input;
 
-            // 입력이 실패하면 예외를 발생시킴
-            if (cin.fail())
-                throw runtime_error("형식에 맞지 않는 입력입니다.");
+        // 입력이 실패하면 예외를 발생시킴
+        if (cin.fail())
+            throw runtime_error("형식에 맞지 않는 입력입니다.");
 
-            if (input == 1 || input == 2 || input == 3 || input == 4) {
-                n = input;
-                break;
-            } else throw runtime_error("범위에 어긋나는 입력입니다.");
-        } catch (const runtime_error& e) {
-            cout << "다시 입력해 주세요.\n";
-        }
+        if (input == 1 || input == 2 || input == 3 || input == 4)
+            n = input;
+        else throw runtime_error("범위에 어긋나는 입력입니다.");
+    } catch (const runtime_error& e) {
+        cout << "되돌아갑니다.\n";
     }
 
     if (n == 1 || n == 2) {
@@ -201,7 +214,9 @@ bool OrderManager::editOrder(int id) {
 
 Order* OrderManager::search(int id) {
 	//해당 id의 Order를 OrderList에서 반환
-    return orderList[id];
+    if (orderList.find(id) != orderList.end())
+        return orderList[id];
+    return nullptr;
 }
 
 int OrderManager::makeId() {

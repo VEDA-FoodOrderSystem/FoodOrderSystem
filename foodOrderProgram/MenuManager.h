@@ -10,10 +10,11 @@ public:
 
     vector<string> parseCSV(istream& file, char delimiter);
 
-    virtual void inputMenu();
-    virtual void saveMenu(string menuName, int menuPrice);
+    virtual int inputMenu();
+    virtual int saveMenu(string menuName, int menuPrice);
     virtual void deleteMenu(int id);
     virtual void editMenu(int id);
+    virtual void saveEdit(int id, string name, int price);
     virtual Menu* search(int id);
     virtual int makeId();
     virtual void displayMenu();

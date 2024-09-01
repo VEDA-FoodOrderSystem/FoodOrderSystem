@@ -1,0 +1,2 @@
+0, 4, G       o       o       d               f       o       o       d , 7
+1, 4, G   o   o   d       f   o   o   d , 2
