@@ -74,7 +74,7 @@ vector<string> ReviewManager::parseCSV(istream& file, char delimiter)
     return row;
 }
 
-void ReviewManager::inputReview(int order_id) {
+int ReviewManager::inputReview(int order_id) {
 
 	//별점, comment 입력 받기
     int star;
@@ -85,10 +85,10 @@ void ReviewManager::inputReview(int order_id) {
     cout << "리뷰를 입력해 주세요.\n>> ";
     getline(cin, content);
 
-	saveReview(star, content, order_id);
+	return saveReview(star, content, order_id);
 }
 
-void ReviewManager::saveReview(int star, string content, int order_id) {
+int ReviewManager::saveReview(int star, string content, int order_id) {
 
     MenuManager mm = MenuManager();
     OrderManager om = OrderManager();
@@ -110,13 +110,16 @@ void ReviewManager::saveReview(int star, string content, int order_id) {
 
     //displayReview(review_id)
     displayReview(id);
+    return id;
 }
 
 
 Review* ReviewManager::search(int id)
 {
 	//해당 review_id를 가진 review 반환
-    return reviewList[id];
+    if (reviewList.find(id) != reviewList.end())
+        return reviewList[id];
+    return nullptr;
 }
 
 map<int, Review*> ReviewManager::getReviewList() {

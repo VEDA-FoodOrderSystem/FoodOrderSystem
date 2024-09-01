@@ -9,8 +9,8 @@ public:
 
     vector<string> parseCSV(istream& file, char delimiter);
 
-    virtual void inputReview(int order_id);
-    virtual void saveReview(int star, string content, int order_id);
+    virtual int inputReview(int order_id);
+    virtual int saveReview(int star, string content, int order_id);
     virtual Review* search(int id);
     virtual map<int, Review*> getReviewList();
     virtual int makeId();

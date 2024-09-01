@@ -34,6 +34,8 @@ MenuManager::~MenuManager()
 	if (!file.fail()) {
 		for (const auto& v : menuList) {
 			Menu* m = v.second;
+            if (m == NULL)
+                continue;
 			file << m->getId()<< ", " << m->getName() << ", ";
 			file << m->getStar() << ", " << m->getPrice() << ",";
 			file << m->getOrdered() << endl;
@@ -67,7 +69,7 @@ vector<string> MenuManager::parseCSV(istream& file, char delimiter)
 	return row;
 }
 
-void MenuManager::inputMenu()
+int MenuManager::inputMenu()
 {
     string menuName;
     int menuPrice;
@@ -76,30 +78,28 @@ void MenuManager::inputMenu()
     cout << "이름>> "; cin >> menuName;
     cout << "가격>> "; cin >> menuPrice;
 
-    saveMenu(menuName, menuPrice);
+    return saveMenu(menuName, menuPrice);
 }
 
-void MenuManager::saveMenu(string menuName, int menuPrice)
+int MenuManager::saveMenu(string menuName, int menuPrice)
 {
     int id = makeId();
     Menu* m = new Menu(id, menuName, 0, menuPrice, 0);
     menuList.insert(make_pair(id, m));
 
-    cout << "------------------------------" << endl;
-    cout << "*신메뉴 " << menuName << "이 등록되었습니다." << endl;
-    displayMenu(id);
-    cout << "------------------------------" << endl;
+    return id;
 }
 
 void MenuManager::deleteMenu(int id)
 {
-	Menu* m = search(id);
-	cout << "------------------------------" << endl;
-	cout << "*삭제된 메뉴는 다음과 같습니다." << endl;
-	displayMenu(id);
-	cout << "------------------------------" << endl;
+	menuList[id]->setIsValid(false);
+}
 
-	menuList.erase(id);
+void MenuManager::saveEdit(int id, string name, int price) {
+    Menu* m = search(id);
+    m->setName(name);
+    m->setPrice(price);
+    menuList[id] = m;
 }
 
 void MenuManager::editMenu(int id)
@@ -110,11 +110,8 @@ void MenuManager::editMenu(int id)
 	cout << "수정할 내용을 입력해주세요." << endl;
 	cout << "이름>> "; cin >> editName;
 	cout << "가격>> "; cin >> editPrice;
-	
-	Menu* m = search(id);
-	m->setName(editName);
-	m->setPrice(editPrice);
-	menuList[id] = m;
+
+    saveEdit(id, editName, editPrice);
 
 	cout << "------------------------------" << endl;
 	cout << "*수정된 메뉴는 다음과 같습니다." << endl;
@@ -124,22 +121,23 @@ void MenuManager::editMenu(int id)
 
 Menu* MenuManager::search(int id)
 {
-	return menuList[id];
+    if (menuList.find(id) != menuList.end())
+        return menuList[id];
+    return nullptr;
 }
 
 int MenuManager::makeId()
 {
-	if (menuList.size() == 0) {
+	if (menuList.empty()) {
 		return 0;
-	}
-	else {
+	} else {
 		auto it = menuList.end();
 		int lastId = (--it)->first;
 		return (++lastId);
 	}
 }
 
-void MenuManager::displayMenu(vector < pair<int, Menu*>> v)
+void MenuManager::displayMenu(vector <pair<int, Menu*>> v)
 {
 	cout << endl;
 	cout << "현재 등록된 메뉴 리스트입니다." << endl;
@@ -219,7 +217,11 @@ bool MenuManager::compOrdered(pair<int, Menu*>& a, pair<int, Menu*>& b)
 
 map<int,int>  MenuManager::sortMenu(int mode)
 {
-	vector<pair<int, Menu*>> v(menuList.begin(), menuList.end());
+	vector<pair<int, Menu*>> v;
+    for (auto ml: menuList)
+        if (ml.second->getIsValid())
+            v.push_back(ml);
+
 	map <int, int> m;
 	switch (mode) {
 	case 1:
@@ -258,6 +260,8 @@ bool MenuManager::isExistMenu(int id)
 bool MenuManager::selectMenu()
 {
 	int mode, id;
+    Menu* menu;
+
 	cout << endl;
 	cout << "원하는 메뉴를 선택하세요." << endl;
 	cout << "1. 메뉴 등록" << endl;
@@ -268,7 +272,12 @@ bool MenuManager::selectMenu()
 
 	switch (mode) {
 	case 1:
-		inputMenu();
+		id = inputMenu();
+        menu = search(id);
+        cout << "------------------------------" << endl;
+        cout << "*신메뉴 " << menu->getName() << "이 등록되었습니다." << endl;
+        displayMenu(id);
+        cout << "------------------------------" << endl;
 		break;
 	case 2:
 		displayMenu();
@@ -279,6 +288,7 @@ bool MenuManager::selectMenu()
 			cout << "없는 메뉴입니다. 다시 입력하세요." << endl;
 			cout << ">>"; cin >> id;
 		}
+
 		editMenu(id-1);
 		break;
 	case 3:
@@ -291,6 +301,10 @@ bool MenuManager::selectMenu()
 			cout << ">>";  cin >> id;
 
 		}
+        cout << "------------------------------" << endl;
+        cout << "*삭제된 메뉴는 다음과 같습니다." << endl;
+        displayMenu(id);
+        cout << "------------------------------" << endl;
 		deleteMenu(id - 1);
 		break;
 	case 4: default:

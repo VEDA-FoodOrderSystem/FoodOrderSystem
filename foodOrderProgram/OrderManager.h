@@ -12,7 +12,7 @@ public:
     vector<string> parseCSV(istream& file, char delimiter);
 
     virtual void inputOrder(map<int, int> idx);
-    virtual void saveOrder(string time, int customer_id, const vector<pair<int, int>>& order);
+    virtual int saveOrder(string time, int customer_id, const vector<pair<int, int>>& order);
     virtual void deleteOrder(int id);
     virtual bool editOrder(int id);
     virtual Order* search(int id);
@@ -22,5 +22,6 @@ public:
     virtual bool selectMenu();
 private:
     static map<int, Order*> orderList;
+    friend class OrderManagerTest;
 };
 
