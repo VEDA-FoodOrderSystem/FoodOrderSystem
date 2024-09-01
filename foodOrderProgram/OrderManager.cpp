@@ -10,22 +10,21 @@ map<int, Order*> OrderManager::orderList;
 
 OrderManager::OrderManager() {
     ifstream file;
-    file.open("orderlist.txt");
+    file.open("orderlist.csv");
     if (!file.fail()) {
         while (!file.eof()) {
-            vector<pair<int, int>> orderMenuList;
+            vector<pair<int, int>> orderMenuList = {};
             vector<string> row = parseCSV(file, ',');
             if (row.size()) {
                 int id = atoi(row[0].c_str());
                 string time = row[1].c_str();
-                int state = atoi(row[2].c_str());
-                int customer_id = atoi(row[3].c_str());
+                int customer_id = atoi(row[2].c_str());
+                int state = atoi(row[3].c_str());
 
-                for (int i = 4; !strlen(row[i].c_str()) ; i++) {
-                    orderMenuList.push_back({atoi(row[i].c_str()), atoi(row[i].c_str())});
+                for (int i = 4; i < row.size(); i=i+2) {
+                    orderMenuList.push_back({ atoi(row[i].c_str()), atoi(row[i+1].c_str()) });
                 }
-
-                Order* o = new Order(id, time, state, customer_id);
+                Order* o = new Order(id, time, customer_id, state, orderMenuList);
                 orderList[id] = o;
             }
         }
@@ -35,7 +34,7 @@ OrderManager::OrderManager() {
 
 OrderManager::~OrderManager() {
     ofstream file;
-    file.open("orderlist.txt");
+    file.open("orderlist.csv");
     if (!file.fail()) {
         for (const auto& v : orderList) {
             Order* o = v.second;
@@ -46,8 +45,11 @@ OrderManager::~OrderManager() {
 
             file << "{";
             vector<pair<int, int>> orderMenuList = o->getOrderMenuList();
-            for (auto oml: orderMenuList) {
-                file << "{" << oml.first << ", " << oml.second << "}, ";
+            for (auto it = orderMenuList.begin(); it != orderMenuList.end(); ++it) {
+                file << "{" << it->first << ", " << it->second << "}";
+                if (next(it) != orderMenuList.end()) {  
+                    file << ", ";
+                }
             }
             file << "}" << endl;
         }
@@ -60,33 +62,25 @@ vector<string> OrderManager::parseCSV(istream& file, char delimiter)
     stringstream ss;
     vector<string> row;
     string t = " \n\r\t";
-    char c;
 
-    while (file.get(c)) {
+    while (!file.eof()) {
+        char c = file.get();
+        if (c == '{' || c == '}') continue;
         if (c == delimiter || c == '\r' || c == '\n') {
+            if (file.peek() == '\n') {
+                file.get();
+            }
             string s = ss.str();
             s.erase(0, s.find_first_not_of(t));
             s.erase(s.find_last_not_of(t) + 1);
             row.push_back(s);
             ss.str("");
-            ss.clear(); // 스트링스트림 초기화
-
-            // 만약 줄바꿈 문자를 만나면 종료
-            if (c == '\r' && file.peek() == '\n') file.get(); // Windows 개행 처리 (\r\n)
-            if (c == '\n') break;
-        } else {
+            if (c != delimiter) break;
+        }
+        else {
             ss << c;
         }
     }
-
-    // 마지막 값 처리
-    if (!ss.str().empty()) {
-        string s = ss.str();
-        s.erase(0, s.find_first_not_of(t));
-        s.erase(s.find_last_not_of(t) + 1);
-        row.push_back(s);
-    }
-
     return row;
 }
 
@@ -95,7 +89,15 @@ void OrderManager::inputOrder(map<int, int> idx) {
     MenuManager mm = MenuManager();
     CustomerManager cm = CustomerManager();
 
+    if (idx.empty()) {
+        cout << endl;
+        cout << "[Error]" << endl;
+        cout << "주문 가능한 메뉴가 없습니다." << endl;
+        return;
+    }
+
 	// 메뉴, 수량 입력받고 orderMenuList에 추가
+    cout << endl;
     cout << "원하는 메뉴의 번호와 수량을 입력하세요. (종료하려면 0을 입력하세요)\n";
 
     // 메뉴 번호와 수량을 임시 저장할 벡터
@@ -110,12 +112,13 @@ void OrderManager::inputOrder(map<int, int> idx) {
 
         cout << ">> 수량: "; cin >> cnt;
 
-        mm.search(idx[num])->setOrdered(cnt);
+        //mm.search(idx[num])->setOrdered(cnt);
         order.push_back({idx[num], cnt});
 
         while (1) {
             try {
                 int input;
+                cout << endl;
                 cout << "계속 주문하시겠습니까? (1)예 (2)아니오\n>> ";
                 cin >> input;
 
@@ -131,6 +134,8 @@ void OrderManager::inputOrder(map<int, int> idx) {
                     break;
                 } else throw runtime_error("범위에 어긋나는 입력입니다.");
             } catch (const runtime_error& e) {
+                cout << endl;
+                cout << "[Error]";
                 cout << "다시 입력해 주세요.\n";
             }
         }
@@ -147,15 +152,9 @@ void OrderManager::inputOrder(map<int, int> idx) {
     string time = to_string(t->tm_year + 1900) + '.' + to_string(t->tm_mon + 1) + '.' + to_string(t->tm_mday)
             + ' ' + to_string(t->tm_hour) + ':' + to_string(t->tm_min);
 
-    for (auto o: order) {
-        Menu* menu = mm.search(o.first);
-        menu->setOrdered(o.second);
-    }
 
     int id = saveOrder(time, customer->getId(), order);
 
-    //displayOrder(id)
-    displayOrder(id, true);
 }
 
 int OrderManager::saveOrder(string time, int customer_id, const vector<pair<int, int>>& order) {
@@ -163,16 +162,22 @@ int OrderManager::saveOrder(string time, int customer_id, const vector<pair<int,
     MenuManager mm = MenuManager();
 
     //order_Id 생성
-    int id = makeId();
+    int id = makeId() + 1;
 
     //Order 생성해서 orderList에 추가
     Order *newOrder = new Order(id, time, customer_id, 0, order);
     orderList.insert({id, newOrder});
 
+    for (auto o: order) {
+        Menu* menu = mm.search(o.first);
+        menu->setOrdered(menu->getOrdered() + o.second);
+    }
+    displayOrder(id, true);
     return id;
 }
 
 void OrderManager::deleteOrder(int id) {
+    cout << endl;
     cout << "다음 주문이 삭제됩니다.\n";
 	//displayOrder(id)
     displayOrder(id, false);
@@ -183,21 +188,27 @@ void OrderManager::deleteOrder(int id) {
 
 bool OrderManager::editOrder(int id) {
     int n;
-    try {
-        int input;
-        cout << "수정할 타입을 선택해 주세요.\n";
-        cout << "(1)조리 시작 (2)조리 완료 (3)삭제 (4)뒤로가기\n>> ";
-        cin >> input;
+    while (1) {
+        try {
+            int input;
+            cout << endl;
+            cout << "수정할 타입을 선택해 주세요.\n";
+            cout << "(1)조리 시작 (2)조리 완료 (3)삭제 (4)뒤로가기\n>> ";
+            cin >> input;
 
         // 입력이 실패하면 예외를 발생시킴
         if (cin.fail())
             throw runtime_error("형식에 맞지 않는 입력입니다.");
 
-        if (input == 1 || input == 2 || input == 3 || input == 4)
-            n = input;
-        else throw runtime_error("범위에 어긋나는 입력입니다.");
-    } catch (const runtime_error& e) {
-        cout << "되돌아갑니다.\n";
+            if (input == 1 || input == 2 || input == 3 || input == 4) {
+                n = input;
+                break;
+            } else throw runtime_error("범위에 어긋나는 입력입니다.");
+        } catch (const runtime_error& e) {
+            cout << endl;
+            cout << "[Error]" << endl;
+            cout << "다시 입력해 주세요.\n";
+        }
     }
 
     if (n == 1 || n == 2) {
@@ -232,13 +243,21 @@ int OrderManager::makeId() {
 
 bool OrderManager::displayOrder() {
 
-    if (orderList.empty()) {
+    bool checkState = false;
+    for (auto order : orderList) {
+        if (order.second->getState() != 2) {
+            checkState = true;
+        }
+    }
+
+    if (!checkState || orderList.empty()) {
         cout << "\n------------------------------\n";
         cout << "새로운 주문 및 진행 중인 주문이 없습니다.";
         cout << "\n------------------------------\n";
         return false;
     }
 
+    cout << endl;
     cout << "새로운 주문 및 진행 중인 주문 목록입니다.\n";
 
 	//orderList의 모든 order 출력
@@ -247,7 +266,6 @@ bool OrderManager::displayOrder() {
             continue;
         displayOrder(order.second->getId(), false);
     }
-
     return true;
 }
 
@@ -259,6 +277,7 @@ void OrderManager::displayOrder(int id, bool isCustomer) {
 	//해당 id의 order 출력
     Order* o = search(id);
 
+    cout << endl;
     cout << "------------------------------\n";
     cout << "주문 번호: " << o->getId() << "번\n";
 
@@ -290,7 +309,6 @@ void OrderManager::displayOrder(int id, bool isCustomer) {
         }
         cout << "  상태  : " << state << "\n";
     }
-
     cout << "------------------------------\n";
 }
 
@@ -303,10 +321,11 @@ bool OrderManager::selectMenu() {
     while (1) {
         try {
             int input;
+            cout << endl;
             cout << "수정할 주문 번호를 입력하세요. (종료는 0을 입력하세요)\n>> ";
             cin >> input;
 
-            Order *order = search(id);
+            Order *order = search(input);
 
             // 입력이 실패하면 예외를 발생시킴
             if (input && order == nullptr)
@@ -316,6 +335,8 @@ bool OrderManager::selectMenu() {
                 break;
             }
         } catch (const runtime_error& e) {
+            cout << endl;
+            cout << "[Error]" << endl;
             cout << "다시 입력해 주세요.\n";
         }
     }

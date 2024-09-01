@@ -11,7 +11,7 @@ map<int, Review*> ReviewManager::reviewList;
 ReviewManager::ReviewManager() {
 
     ifstream file;
-    file.open("reviewlist.txt");
+    file.open("reviewlist.csv");
     if (!file.fail()) {
         while (!file.eof()) {
             string content;
@@ -35,15 +35,16 @@ ReviewManager::ReviewManager() {
 
 ReviewManager::~ReviewManager() {
     ofstream file;
-    file.open("reviewlist.txt");
+    file.open("reviewlist.csv");
     if (!file.fail()) {
         for (const auto& v : reviewList) {
             Review* r = v.second;
             file << r->getId()<< ", " << r->getStar() << ", ";
 
             string content = r->getContent();
-            for (auto c: content)
-                file << c << ' ';
+            file << content;
+            //for (auto c: content)
+                //file << c << ' ';
             file << ", " << r->getOrderId() << endl;
         }
     }
@@ -75,13 +76,43 @@ vector<string> ReviewManager::parseCSV(istream& file, char delimiter)
 }
 
 int ReviewManager::inputReview(int order_id) {
+    OrderManager om = OrderManager();
+    bool isExistReview = false;
+
+    for (auto rv : reviewList) {
+        if (rv.second->getOrderId() == order_id) isExistReview = true;
+    }
+
+    if (isExistReview) {
+        cout << endl;
+        cout << "[Error]" << endl;
+        cout << "해당 주문은 이미 리뷰가 작성되었습니다." << endl;
+        return -1;
+    }
 
 	//별점, comment 입력 받기
     int star;
     string content;
-    cout << "평점을 입력해 주세요. (0, 1, 2, 3, 4, 5)\n>> ";
-    cin >> star;
-    cin.ignore();
+    while (1) {
+        try {
+            cout << endl;
+            cout << "평점을 입력해 주세요. (0, 1, 2, 3, 4, 5)\n>> ";
+            cin >> star;
+            cin.ignore();
+            if (star < 0 || star > 5) {
+                throw runtime_error("범위에 어긋나는 입력입니다.");
+            }
+            else {
+                break;
+            }
+        }
+        catch (const runtime_error& e) {
+            cout << endl;
+            cout << "[Error]" << endl;
+            cout << "다시 입력해주세요." << endl;
+        }
+    }
+    cout << endl;
     cout << "리뷰를 입력해 주세요.\n>> ";
     getline(cin, content);
 
@@ -98,7 +129,8 @@ int ReviewManager::saveReview(int star, string content, int order_id) {
     vector<pair<int, int>> orderMenuList = order->getOrderMenuList();
     for (auto oml: orderMenuList) {
         Menu* menu = mm.search(oml.first);
-        menu->setStar(star);
+        menu->setStar(star * (oml.second) + (menu -> getStar()));
+        menu->setReviewed(menu->getReviewed() + oml.second);
     }
 
     //review_id 생성
@@ -109,6 +141,7 @@ int ReviewManager::saveReview(int star, string content, int order_id) {
     reviewList.insert({id, review});
 
     //displayReview(review_id)
+    cout << endl;
     displayReview(id);
     return id;
 }
@@ -141,14 +174,14 @@ void ReviewManager::displayReview() {
 
     map<int, Review*> reviewList = getReviewList();
 
-    cout << "------------------------------\n";
-
     if (reviewList.empty()) {
+        cout << endl;
+        cout << "[Error]" << endl;
         cout << "작성된 리뷰가 없습니다.\n";
-        cout << "------------------------------\n";
         return;
     }
-
+    
+    cout << endl;
     cout << "작성된 리뷰입니다." << endl;
 
 	//reviewList의 모든 review 출력

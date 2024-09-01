@@ -1,6 +1,6 @@
 #include "Menu.h"
 
-Menu::Menu(int id, string name, int star, int price, int ordered, bool isValid)
+Menu::Menu(int id, string name, int star, int price, int ordered, int reviewed, bool isValid)
 {
 	menu_id = id;
 	this->name = name;
@@ -8,6 +8,7 @@ Menu::Menu(int id, string name, int star, int price, int ordered, bool isValid)
 	this->price = price;
 	this->ordered = ordered;
     this->isValid = isValid;
+	this->reviewed = reviewed;
 }
 int Menu::getId()
 {
@@ -23,7 +24,7 @@ string Menu::getName()
 }
 void Menu::setStar(int inputStar)
 {
-	this->star += inputStar;
+	this->star = inputStar;
 }
 double Menu::getStar()
 {
@@ -52,4 +53,10 @@ void Menu::setIsValid(bool valid)
 bool Menu::getIsValid()
 {
     return isValid;
+}
+void Menu::setReviewed(int reviewed) {
+	this->reviewed = reviewed;
+}
+int Menu::getReviewed() {
+	return reviewed;
 }

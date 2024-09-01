@@ -61,11 +61,19 @@ bool FoodOrderSystem::selectCustomerMenu()
 		break;
 	case 2: //리뷰작성
 		int orderId;
+		int reviewId;
+		cout << endl;
 		cout << "리뷰를 작성할 주문번호를 입력해주세요." << endl;
 		cout << ">> ";  cin >> orderId;
-		cout << "주문번호 "<<orderId<<"번에 대한 내역입니다."<<endl;
+
+		if (om.search(orderId) == nullptr) {
+			cout << endl;
+			cout << "[Error]" << endl;
+			cout << "존재하지 않는 주문번호입니다." << endl;
+			break;
+		}
 		om.displayOrder(orderId, true);
-		rm.inputReview(orderId);
+		reviewId = rm.inputReview(orderId);
 		break;
 	case 3: //리뷰확인
 		rm.displayReview();
@@ -80,7 +88,7 @@ bool FoodOrderSystem::selectCustomerMenu()
 void FoodOrderSystem::run()
 {
 	int mode;
-	cout << setw(10) << "[음식 주문 프로그램]" << endl;
+	cout << "[음식 주문 프로그램]" << endl;
 
 	while (1) {
 		cout << endl;
@@ -90,8 +98,16 @@ void FoodOrderSystem::run()
 		cout << "3. 종료" << endl;
 		cout << ">> ";  cin >> mode;
 
-
-		if (mode == 3) break;
+		if (cin.fail()) {
+			cout << endl;
+			cout << "[Error]" << endl;
+			cout << "잘못된 입력입니다. " << endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
+		else if (mode == 3) {
+			break;
+		}
 		else if (mode == 1) {//고객 모드
 			while (1) {
 				bool b = selectCustomerMenu();
@@ -104,6 +120,12 @@ void FoodOrderSystem::run()
 				if (!b) break;
 			}
 		}
+		else {
+			cout << endl;
+			cout << "[Error]" << endl;
+			cout << "잘못된 입력입니다. " << endl;
+		}
 	}
+	cout << endl;
 	cout << "프로그램이 종료되었습니다." << endl;
 }

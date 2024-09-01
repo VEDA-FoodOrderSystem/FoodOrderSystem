@@ -1,5 +1,7 @@
 #include "Customer.h"
 #include <map>
+#include <vector>
+
 class CustomerManager
 {
 public:
