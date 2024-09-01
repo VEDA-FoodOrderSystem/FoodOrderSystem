@@ -8,6 +8,7 @@ public:
     CustomerManager();
     ~CustomerManager();
     vector<string> parseCSV(istream& file, char delimiter);
+
 	virtual int makeId();
     virtual Customer* search(int id);
     virtual Customer* inputCustomer();

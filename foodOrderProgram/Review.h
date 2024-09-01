@@ -19,4 +19,3 @@ private:
 	string content;
 	int order_id;
 };
-

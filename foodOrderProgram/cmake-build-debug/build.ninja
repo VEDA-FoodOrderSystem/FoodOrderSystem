@@ -135,6 +135,164 @@ build foodOrderProgram: CXX_EXECUTABLE_LINKER__foodOrderProgram_Debug CMakeFiles
   TARGET_FILE = foodOrderProgram
   TARGET_PDB = foodOrderProgram.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target tests
+
+
+#############################################
+# Order-only phony target for tests
+
+build cmake_object_order_depends_target_tests: phony || cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build CMakeFiles/tests.dir/Menu.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/Menu.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/Menu.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir
+
+build CMakeFiles/tests.dir/Order.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/Order.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/Order.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir
+
+build CMakeFiles/tests.dir/Review.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/Review.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/Review.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir
+
+build CMakeFiles/tests.dir/Customer.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/Customer.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/Customer.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir
+
+build CMakeFiles/tests.dir/MenuManager.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/MenuManager.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/MenuManager.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir
+
+build CMakeFiles/tests.dir/OrderManager.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/OrderManager.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/OrderManager.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir
+
+build CMakeFiles/tests.dir/ReviewManager.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/ReviewManager.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/ReviewManager.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir
+
+build CMakeFiles/tests.dir/CustomerManager.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/CustomerManager.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/CustomerManager.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir
+
+build CMakeFiles/tests.dir/tests/testMain.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/tests/testMain.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/tests/testMain.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
+
+build CMakeFiles/tests.dir/tests/MenuTest.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/tests/MenuTest.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/tests/MenuTest.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
+
+build CMakeFiles/tests.dir/tests/OrderTest.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/tests/OrderTest.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/tests/OrderTest.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
+
+build CMakeFiles/tests.dir/tests/ReviewTest.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/tests/ReviewTest.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/tests/ReviewTest.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
+
+build CMakeFiles/tests.dir/tests/CustomerTest.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/tests/CustomerTest.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/tests/CustomerTest.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
+
+build CMakeFiles/tests.dir/tests/MenuManagerTest.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/tests/MenuManagerTest.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/tests/MenuManagerTest.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
+
+build CMakeFiles/tests.dir/tests/OrderManagerTest.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/tests/OrderManagerTest.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/tests/OrderManagerTest.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
+
+build CMakeFiles/tests.dir/tests/ReviewManagerTest.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/tests/ReviewManagerTest.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/tests/ReviewManagerTest.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
+
+build CMakeFiles/tests.dir/tests/CustomerManagerTest.cpp.o: CXX_COMPILER__tests_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/tests/CustomerManagerTest.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/tests/CustomerManagerTest.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target tests
+
+
+#############################################
+# Link the executable tests
+
+build tests tests[1]_tests.cmake | ${cmake_ninja_workdir}tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__tests_Debug CMakeFiles/tests.dir/Menu.cpp.o CMakeFiles/tests.dir/Order.cpp.o CMakeFiles/tests.dir/Review.cpp.o CMakeFiles/tests.dir/Customer.cpp.o CMakeFiles/tests.dir/MenuManager.cpp.o CMakeFiles/tests.dir/OrderManager.cpp.o CMakeFiles/tests.dir/ReviewManager.cpp.o CMakeFiles/tests.dir/CustomerManager.cpp.o CMakeFiles/tests.dir/tests/testMain.cpp.o CMakeFiles/tests.dir/tests/MenuTest.cpp.o CMakeFiles/tests.dir/tests/OrderTest.cpp.o CMakeFiles/tests.dir/tests/ReviewTest.cpp.o CMakeFiles/tests.dir/tests/CustomerTest.cpp.o CMakeFiles/tests.dir/tests/MenuManagerTest.cpp.o CMakeFiles/tests.dir/tests/OrderManagerTest.cpp.o CMakeFiles/tests.dir/tests/ReviewManagerTest.cpp.o CMakeFiles/tests.dir/tests/CustomerManagerTest.cpp.o | lib/libgtest.a lib/libgmock.a lib/libgtest_main.a lib/libgtest.a || lib/libgmock.a lib/libgtest.a lib/libgtest_main.a
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LINK_LIBRARIES = lib/libgtest.a  lib/libgmock.a  lib/libgtest_main.a  lib/libgtest.a
+  OBJECT_DIR = CMakeFiles/tests.dir
+  POST_BUILD = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -D TEST_TARGET=tests -D TEST_EXECUTABLE=/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=tests_TESTS -D CTEST_FILE=/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GoogleTestAddTests.cmake
+  PRE_LINK = :
+  RESTAT = 1
+  TARGET_FILE = tests
+  TARGET_PDB = tests.dbg
+
+
+#############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
+
 
 #############################################
 # Utility command for edit_cache
@@ -158,8 +316,444 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for test
+
+build _deps/googletest-build/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/test: phony _deps/googletest-build/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/googletest-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/googletest-build/edit_cache: phony _deps/googletest-build/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/googletest-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram -B/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/rebuild_cache: phony _deps/googletest-build/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/googletest-build/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/googletest-build/CMakeFiles/install.util: CUSTOM_COMMAND _deps/googletest-build/all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/install: phony _deps/googletest-build/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/googletest-build/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/googletest-build/all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/install/local: phony _deps/googletest-build/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/googletest-build/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/googletest-build/all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/install/strip: phony _deps/googletest-build/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gmock
+
+
+#############################################
+# Order-only phony target for gmock
+
+build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depends_target_gtest
+
+build _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_COMPILER__gmock_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
+  DEP_FILE = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d
+  FLAGS = -g -std=c++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
+  OBJECT_FILE_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gmock
+
+
+#############################################
+# Link the static library lib/libgmock.a
+
+build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o || lib/libgtest.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = lib/libgmock.a
+  TARGET_PDB = gmock.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gmock_main
+
+
+#############################################
+# Order-only phony target for gmock_main
+
+build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest
+
+build _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: CXX_COMPILER__gmock_main_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
+  DEP_FILE = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d
+  FLAGS = -g -std=c++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir
+  OBJECT_FILE_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gmock_main
+
+
+#############################################
+# Link the static library lib/libgmock_main.a
+
+build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o || lib/libgmock.a lib/libgtest.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = lib/libgmock_main.a
+  TARGET_PDB = gmock_main.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build _deps/googletest-build/googlemock/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googlemock/test: phony _deps/googletest-build/googlemock/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/googletest-build/googlemock/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/googletest-build/googlemock/edit_cache: phony _deps/googletest-build/googlemock/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/googletest-build/googlemock/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram -B/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googlemock/rebuild_cache: phony _deps/googletest-build/googlemock/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/googletest-build/googlemock/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/googletest-build/googlemock/CMakeFiles/install.util: CUSTOM_COMMAND _deps/googletest-build/googlemock/all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googlemock/install: phony _deps/googletest-build/googlemock/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/googletest-build/googlemock/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/googletest-build/googlemock/all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googlemock/install/local: phony _deps/googletest-build/googlemock/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/googletest-build/googlemock/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/googletest-build/googlemock/all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googlemock && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googlemock/install/strip: phony _deps/googletest-build/googlemock/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googlemock/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Order-only phony target for gtest
+
+build cmake_object_order_depends_target_gtest: phony || _deps/googletest-build/googletest/CMakeFiles/gtest.dir
+
+build _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_COMPILER__gtest_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
+  DEP_FILE = _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d
+  FLAGS = -g -std=c++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest.dir
+  OBJECT_FILE_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Link the static library lib/libgtest.a
+
+build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = lib/libgtest.a
+  TARGET_PDB = gtest.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gtest_main
+
+
+#############################################
+# Order-only phony target for gtest_main
+
+build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_depends_target_gtest
+
+build _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CXX_COMPILER__gtest_main_unscanned_Debug /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
+  DEP_FILE = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d
+  FLAGS = -g -std=c++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -I/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/. -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
+  OBJECT_FILE_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gtest_main
+
+
+#############################################
+# Link the static library lib/libgtest_main.a
+
+build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o || lib/libgtest.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = lib/libgtest_main.a
+  TARGET_PDB = gtest_main.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build _deps/googletest-build/googletest/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googletest/test: phony _deps/googletest-build/googletest/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/googletest-build/googletest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/googletest-build/googletest/edit_cache: phony _deps/googletest-build/googletest/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/googletest-build/googletest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram -B/Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googletest/rebuild_cache: phony _deps/googletest-build/googletest/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/googletest-build/googletest/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/googletest-build/googletest/CMakeFiles/install.util: CUSTOM_COMMAND _deps/googletest-build/googletest/all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googletest/install: phony _deps/googletest-build/googletest/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/googletest-build/googletest/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/googletest-build/googletest/all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googletest/install/local: phony _deps/googletest-build/googletest/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/googletest-build/googletest/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/googletest-build/googletest/all
+  COMMAND = cd /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googletest && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googletest/install/strip: phony _deps/googletest-build/googletest/CMakeFiles/install/strip.util
+
 # =============================================================================
 # Target aliases.
+
+build gmock: phony lib/libgmock.a
+
+build gmock_main: phony lib/libgmock_main.a
+
+build gtest: phony lib/libgtest.a
+
+build gtest_main: phony lib/libgtest_main.a
+
+build libgmock.a: phony lib/libgmock.a
+
+build libgmock_main.a: phony lib/libgmock_main.a
+
+build libgtest.a: phony lib/libgtest.a
+
+build libgtest_main.a: phony lib/libgtest_main.a
 
 # =============================================================================
 # Folder targets.
@@ -169,7 +763,28 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug
 
-build all: phony foodOrderProgram
+build all: phony foodOrderProgram tests _deps/googletest-build/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build
+
+build _deps/googletest-build/all: phony _deps/googletest-build/googlemock/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googlemock
+
+build _deps/googletest-build/googlemock/all: phony lib/libgmock.a lib/libgmock_main.a _deps/googletest-build/googletest/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/cmake-build-debug/_deps/googletest-build/googletest
+
+build _deps/googletest-build/googletest/all: phony lib/libgtest.a lib/libgtest_main.a
 
 # =============================================================================
 # Built-in targets
@@ -178,14 +793,14 @@ build all: phony foodOrderProgram
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeFindDependencyMacro.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FetchContent.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FetchContent/CMakeLists.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindGTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPython.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPython/Support.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GoogleTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/CMakeLists.txt /Users/yunhyegyeong/anaconda3/lib/cmake/GTest/GTestConfig.cmake /Users/yunhyegyeong/anaconda3/lib/cmake/GTest/GTestConfigVersion.cmake /Users/yunhyegyeong/anaconda3/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeFindDependencyMacro.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FetchContent.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FetchContent/CMakeLists.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindGTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPython.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPython/Support.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GoogleTest.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake /Users/yunhyegyeong/Documents/FoodOrderSystem/foodOrderProgram/CMakeLists.txt /Users/yunhyegyeong/anaconda3/lib/cmake/GTest/GTestConfig.cmake /Users/yunhyegyeong/anaconda3/lib/cmake/GTest/GTestConfigVersion.cmake /Users/yunhyegyeong/anaconda3/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake: phony
 
 
 #############################################

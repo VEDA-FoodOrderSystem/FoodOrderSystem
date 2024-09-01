@@ -1,12 +1,13 @@
 #include "Menu.h"
 
-Menu::Menu(int id, string name, int star, int price, int ordered, int reviewed)
+Menu::Menu(int id, string name, int star, int price, int ordered, int reviewed, bool isValid)
 {
 	menu_id = id;
 	this->name = name;
 	this->star = star;
 	this->price = price;
 	this->ordered = ordered;
+    this->isValid = isValid;
 	this->reviewed = reviewed;
 }
 int Menu::getId()
@@ -44,6 +45,14 @@ void Menu::setOrdered(int ordered)
 int Menu::getOrdered()
 {
 	return ordered;
+}
+void Menu::setIsValid(bool valid)
+{
+    isValid = valid;
+}
+bool Menu::getIsValid()
+{
+    return isValid;
 }
 void Menu::setReviewed(int reviewed) {
 	this->reviewed = reviewed;

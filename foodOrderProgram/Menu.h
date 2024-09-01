@@ -5,7 +5,7 @@ using namespace std;
 class Menu
 {
 public:
-	Menu(int id = 0, string name = "", int star = 0, int price = 0, int ordered = 0, int reviewed = 0);
+	Menu(int id = 0, string name = "", int star = 0, int price = 0, int ordered = 0, int reviewed = 0, bool isValid = true);
     virtual int getId();
     virtual void setName(string& name);
     virtual string getName();
@@ -18,6 +18,8 @@ public:
     virtual void setReviewed(int reviewed);
     virtual int getReviewed();
 
+    virtual void setIsValid(bool valid);
+    virtual bool getIsValid();
 
 private:
 	int menu_id;
@@ -26,5 +28,6 @@ private:
 	int price;
 	int ordered;
     int reviewed;
+    bool isValid;
 };
 

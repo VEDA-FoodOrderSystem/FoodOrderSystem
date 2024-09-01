@@ -38,6 +38,8 @@ OrderManager::~OrderManager() {
     if (!file.fail()) {
         for (const auto& v : orderList) {
             Order* o = v.second;
+            if (o == NULL)
+                continue;
             file << o->getId()<< ", " << o->getTime() << ", ";
             file << o->getCustomerId() << ", " << o->getState() << ",";
 
@@ -150,14 +152,19 @@ void OrderManager::inputOrder(map<int, int> idx) {
     string time = to_string(t->tm_year + 1900) + '.' + to_string(t->tm_mon + 1) + '.' + to_string(t->tm_mday)
             + ' ' + to_string(t->tm_hour) + ':' + to_string(t->tm_min);
 
-    saveOrder(time, customer->getId(), order);
+
+    int id = saveOrder(time, customer->getId(), order);
+
 }
 
-void OrderManager::saveOrder(string time, int customer_id, const vector<pair<int, int>>& order) {
+int OrderManager::saveOrder(string time, int customer_id, const vector<pair<int, int>>& order) {
 
     MenuManager mm = MenuManager();
 
+    //order_Id 생성
     int id = makeId() + 1;
+
+    //Order 생성해서 orderList에 추가
     Order *newOrder = new Order(id, time, customer_id, 0, order);
     orderList.insert({id, newOrder});
 
@@ -166,6 +173,7 @@ void OrderManager::saveOrder(string time, int customer_id, const vector<pair<int
         menu->setOrdered(menu->getOrdered() + o.second);
     }
     displayOrder(id, true);
+    return id;
 }
 
 void OrderManager::deleteOrder(int id) {
@@ -188,9 +196,9 @@ bool OrderManager::editOrder(int id) {
             cout << "(1)조리 시작 (2)조리 완료 (3)삭제 (4)뒤로가기\n>> ";
             cin >> input;
 
-            // 입력이 실패하면 예외를 발생시킴
-            if (cin.fail())
-                throw runtime_error("형식에 맞지 않는 입력입니다.");
+        // 입력이 실패하면 예외를 발생시킴
+        if (cin.fail())
+            throw runtime_error("형식에 맞지 않는 입력입니다.");
 
             if (input == 1 || input == 2 || input == 3 || input == 4) {
                 n = input;
@@ -217,7 +225,9 @@ bool OrderManager::editOrder(int id) {
 
 Order* OrderManager::search(int id) {
 	//해당 id의 Order를 OrderList에서 반환
-    return orderList[id];
+    if (orderList.find(id) != orderList.end())
+        return orderList[id];
+    return nullptr;
 }
 
 int OrderManager::makeId() {

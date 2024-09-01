@@ -61,6 +61,7 @@ bool FoodOrderSystem::selectCustomerMenu()
 		break;
 	case 2: //리뷰작성
 		int orderId;
+		int reviewId;
 		cout << endl;
 		cout << "리뷰를 작성할 주문번호를 입력해주세요." << endl;
 		cout << ">> ";  cin >> orderId;
@@ -72,7 +73,7 @@ bool FoodOrderSystem::selectCustomerMenu()
 			break;
 		}
 		om.displayOrder(orderId, true);
-		rm.inputReview(orderId);
+		reviewId = rm.inputReview(orderId);
 		break;
 	case 3: //리뷰확인
 		rm.displayReview();

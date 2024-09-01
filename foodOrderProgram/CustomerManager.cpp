@@ -77,7 +77,9 @@ int CustomerManager::makeId()
 
 Customer* CustomerManager::search(int id)
 {
-    return customerList[id];
+    if (customerList.find(id) != customerList.end())
+        return customerList[id];
+    return nullptr;
 }
 
 Customer* CustomerManager::inputCustomer()
