@@ -9,9 +9,9 @@ VEDA 1기 B반 C++ 미니 프로젝트
 ---
 
 | 김나형 | 윤혜경 |
-| --- | --- |
+| :---: | :---: |
 | ![ㄱㄴㅎ](https://github.com/user-attachments/assets/2d4c14bd-b8d1-45cb-a2db-2d0cec71a620) | ![ㅇㅎㄱ](https://github.com/user-attachments/assets/be47e77b-cb46-4f6a-b13a-2cce6bedb255) |
-| :@hyungee: | :@hyetae: |
+| ![@Hyungee](https://github.com/Hyeongee) | ![@hyetae](https://github.com/hyetae) |
 
 ### 프로젝트 소개
 
