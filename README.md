@@ -63,7 +63,7 @@ C++ STL 중 하나인 Queue와 Kiosk를 결합한 Qiosk는 음식을 주문할 �
 
 ---
 
-**Branch Strategy** : trunck-based 전략
+**Branch Strategy** : trunk-based 전략
 
 `main branch` : 주요 개발 branch
 
