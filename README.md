@@ -11,7 +11,7 @@ VEDA 1기 B반 C++ 미니 프로젝트
 | 김나형 | 윤혜경 |
 | :---: | :---: |
 | ![ㄱㄴㅎ](https://github.com/user-attachments/assets/2d4c14bd-b8d1-45cb-a2db-2d0cec71a620) | ![ㅇㅎㄱ](https://github.com/user-attachments/assets/be47e77b-cb46-4f6a-b13a-2cce6bedb255) |
-| ![@Hyungee](https://github.com/Hyeongee) | ![@hyetae](https://github.com/hyetae) |
+| [@Hyungee](https://github.com/Hyeongee) | [@hyetae](https://github.com/hyetae) |
 
 ### 프로젝트 소개
 
@@ -29,11 +29,7 @@ C++ STL 중 하나인 Queue와 Kiosk를 결합한 Quosk는 음식을 주문할 �
 
 **환경**
 
-<img src="https://img.shields.io/badge/cmake-064F8C?style=for-the-badge&logo=cmake&logoColor=white">
-
-<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/cmake-064F8C?style=for-the-badge&logo=cmake&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
 **개발**
 
@@ -41,9 +37,7 @@ C++ STL 중 하나인 Queue와 Kiosk를 결합한 Quosk는 음식을 주문할 �
 
 **소통**
 
-<img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=FF007F">
-
-<img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white">
+<img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=FF007F"> <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white">
 
 **테스트**
 
