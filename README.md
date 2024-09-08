@@ -1,7 +1,5 @@
 # Quosk
 
----
-
 VEDA 1기 B반 C++ 미니 프로젝트
 
 개발 기간: 2024.08.01 ~ 2024.08.31
@@ -12,8 +10,8 @@ VEDA 1기 B반 C++ 미니 프로젝트
 
 | 김나형 | 윤혜경 |
 | --- | --- |
-| ![ㄱㄴㅎ.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d5d9e8a5-2293-4629-ad47-b171da683bd1/b6bd6a72-ef81-41d8-84ec-c91fcf2df5fa/%E3%84%B1%E3%84%B4%E3%85%8E.png) | ![ㅇㅎㄱ.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d5d9e8a5-2293-4629-ad47-b171da683bd1/29463c5d-3199-4828-8cff-a3bd0e6a6378/%E3%85%87%E3%85%8E%E3%84%B1.png) |
-| @hyungee | @hyetae |
+| ![ㄱㄴㅎ](https://github.com/user-attachments/assets/2d4c14bd-b8d1-45cb-a2db-2d0cec71a620) | ![ㅇㅎㄱ](https://github.com/user-attachments/assets/be47e77b-cb46-4f6a-b13a-2cce6bedb255) |
+| :@hyungee: | :@hyetae: |
 
 ### 프로젝트 소개
 
@@ -43,13 +41,13 @@ C++ STL 중 하나인 Queue와 Kiosk를 결합한 Quosk는 음식을 주문할 �
 
 **소통**
 
-<img src=”https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=FF007F”>
+<img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=FF007F">
 
-<img src=”https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white”>
+<img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white">
 
 **테스트**
 
-<img src=”https://img.shields.io/badge/Google-test-brightblue?style=for-the-badge&labelColor=brightgreen&logo=google”>
+<img src="https://img.shields.io/badge/Google-test-brightblue?style=for-the-badge&labelColor=brightgreen&logo=google">
 
 ### 기능
 
@@ -62,11 +60,7 @@ C++ STL 중 하나인 Queue와 Kiosk를 결합한 Quosk는 음식을 주문할 �
 | ID | 1 |
 | 설명 | 가게의 메뉴를 주문 프로그램에 등록하는 기능 |
 | Actor | Manager |
-| MainFlow | 1) 관리자 모드를 선택한다.
-2) 메뉴 관리 모드에서 메뉴 등록을 선택한다.
-3) 등록할 메뉴의 이름과 가격을 입력한다.
-4) 메뉴를 생성하고, 메뉴 리스트에 추가한다.
-5) 등록된 메뉴의 정보를 출력한다. |
+| MainFlow | 1) 관리자 모드를 선택한다.<br>2) 메뉴 관리 모드에서 메뉴 등록을 선택한다.<br>3) 등록할 메뉴의 이름과 가격을 입력한다.<br>4) 메뉴를 생성하고, 메뉴 리스트에 추가한다.<br>5) 등록된 메뉴의 정보를 출력한다. |
 | Alternative Flow |  |
 
 [📑 기능 명세서 및 클래스 다이어그램 보러 가기](https://www.notion.so/7f9bd519db7343bea651d738657c3f4e?pvs=21)
@@ -75,9 +69,7 @@ C++ STL 중 하나인 Queue와 Kiosk를 결합한 Quosk는 음식을 주문할 �
 
 ---
 
-**Branch Strategy**
-
-: trunck-based 전략
+**Branch Strategy** : trunck-based 전략
 
 `main branch` : 주요 개발 branch
 
